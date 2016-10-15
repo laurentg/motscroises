@@ -80,6 +80,10 @@ To get:
 	   +=============================================+
 	65 black cells (28%)
 
+For more information on available parameters:
+
+	$ motscroises --help
+
 Read the source code to learn how it works.
 
 Enjoy.
