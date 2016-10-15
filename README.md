@@ -34,6 +34,51 @@ Will result in:
 	   +====================================+
 	27 black cells (16%)
 
+Or create an init.txt file containing:
+
+	.■..■.....■..■.
+	.......■.......
+	■■■■■.....■■■■■
+	.......■.......
+	...■...■...■...
+	...■■■■■■■■■...
+	.......■.......
+	■■■■.......■■■■
+	.......■.......
+	...■■■■■■■■■...
+	.......■.......
+	..■■...■...■■..
+	.......■.......
+	■■■■■.....■■■■■
+	.......■.......
+	...■■.....■■...
+
+And run in fixed-black / initialized mode:
+
+	$ motscroises --verbose 2 -c 15 -r 15 -s 8 --seed 42 --maxFill 30 --fixed --init init.txt
+
+To get:
+
+	Grid found in 301 iterations.
+	     A  B  C  D  E  F  G  H  I  J  K  L  M  N  O
+	   +=============================================+
+	 1 | E  ■  A  I  ■  M  I  R  O  S  ■  L  E  ■  A |
+	 2 | S  U  I  N  T  E  R  ■  S  A  V  A  N  T  S |
+	 3 | ■  ■  ■  ■  ■  L  I  R  A  I  ■  ■  ■  ■  ■ |
+	 4 | P  E  T  R  E  E  S  ■  I  G  N  O  R  A  S |
+	 5 | E  R  E  ■  T  E  E  ■  S  A  I  ■  E  M  U |
+	 6 | R  E  E  ■  ■  ■  ■  ■  ■  ■  ■  ■  P  I  E |
+	 7 | E  S  S  O  R  A  I  ■  E  B  O  S  S  E  R |
+	 8 | ■  ■  ■  ■  A  I  D  E  R  A  S  ■  ■  ■  ■ |
+	 9 | P  R  O  F  I  L  E  ■  G  R  E  F  F  E  E |
+	10 | R  I  T  ■  ■  ■  ■  ■  ■  ■  ■  ■  E  T  C |
+	11 | A  V  A  L  I  S  E  ■  E  L  A  G  U  E  R |
+	12 | M  E  ■  ■  D  U  T  ■  S  U  R  ■  ■  T  U |
+	13 | E  R  A  I  E  R  A  ■  S  T  E  P  P  E  S |
+	14 | ■  ■  ■  ■  ■  F  I  L  E  T  ■  ■  ■  ■  ■ |
+	15 | A  M  P  U  T  A  S  ■  S  A  P  I  O  N  S |
+	   +=============================================+
+	65 black cells (28%)
 
 Read the source code to learn how it works.
 
