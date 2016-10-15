@@ -1,0 +1,30 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+version = '0.1'
+
+sourceCompatibility = 1.8
+mainClassName = "bzh.plantkelt.motscroises.Main"
+repositories {
+    mavenCentral()
+}
+dependencies {
+    compile 'com.google.guava:guava:19.0'
+    compile 'com.beust:jcommander:1.+'
+    testCompile 'junit:junit:4.+'
+}
+
+jar {
+    manifest {
+        attributes 'Implementation-Version': version
+    }
+}
+
+applicationDefaultJvmArgs = [ "-Xmx1G" ]
