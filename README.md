@@ -8,9 +8,9 @@ in particular, there is no warranty.
 
 ## Usage
 
-Find a word dictionnary (text file, UTF8, one word per line).
+Find/create a word dictionnary (text file, UTF8, one word per line), or use `/usr/share/dict/words`:
 
-	$ motscroise --cols 14 -rows 14 --size 14 --dict fr.txt --seed 42 --maxFill 15
+	$ motscroise --cols 14 -rows 14 --size 14 --dictionnary fr.txt --seed 42 --maxFill 15
 
 Will result in:
 
@@ -34,51 +34,50 @@ Will result in:
 	   +====================================+
 	27 black cells (16%)
 
-Or create an init.txt file containing:
+Or create an `init.txt` file containing for example:
 
-	.■..■.....■..■.
-	.......■.......
-	■■■■■.....■■■■■
-	.......■.......
-	...■...■...■...
-	...■■■■■■■■■...
-	.......■.......
-	■■■■.......■■■■
-	.......■.......
-	...■■■■■■■■■...
-	.......■.......
-	..■■...■...■■..
-	.......■.......
-	■■■■■.....■■■■■
-	.......■.......
-	...■■.....■■...
+	.......#.......
+	.#...#.#.#...#.
+	....#..#..#....
+	...#MAGICAL#...
+	..#....#....#..
+	.#...#...#...#.
+	.......#.......
+	###.#.###.#.###
+	.......#.......
+	.#...#...#...#.
+	..#....#....#..
+	...#GHOSTLY#...
+	....#..#..#....
+	.#...#.#.#...#.
+	.......#.......
 
 And run in fixed-black / initialized mode:
 
-	$ motscroises --verbose 2 -c 15 -r 15 -s 8 --seed 42 --maxFill 30 --fixed --init init.txt
-
+	$ motscroises --verbose 2 -c 15 -r 15 -s 7 --seed 43 --maxFill 30 --fixed --init init.txt --dictionnary /usr/share/dict/words
+	
 To get:
 
-	Grid found in 301 iterations.
+	Grid found in 169 iterations.
 	     A  B  C  D  E  F  G  H  I  J  K  L  M  N  O
 	   +=============================================+
-	 1 | E  ■  A  I  ■  M  I  R  O  S  ■  L  E  ■  A |
-	 2 | S  U  I  N  T  E  R  ■  S  A  V  A  N  T  S |
-	 3 | ■  ■  ■  ■  ■  L  I  R  A  I  ■  ■  ■  ■  ■ |
-	 4 | P  E  T  R  E  E  S  ■  I  G  N  O  R  A  S |
-	 5 | E  R  E  ■  T  E  E  ■  S  A  I  ■  E  M  U |
-	 6 | R  E  E  ■  ■  ■  ■  ■  ■  ■  ■  ■  P  I  E |
-	 7 | E  S  S  O  R  A  I  ■  E  B  O  S  S  E  R |
-	 8 | ■  ■  ■  ■  A  I  D  E  R  A  S  ■  ■  ■  ■ |
-	 9 | P  R  O  F  I  L  E  ■  G  R  E  F  F  E  E |
-	10 | R  I  T  ■  ■  ■  ■  ■  ■  ■  ■  ■  E  T  C |
-	11 | A  V  A  L  I  S  E  ■  E  L  A  G  U  E  R |
-	12 | M  E  ■  ■  D  U  T  ■  S  U  R  ■  ■  T  U |
-	13 | E  R  A  I  E  R  A  ■  S  T  E  P  P  E  S |
-	14 | ■  ■  ■  ■  ■  F  I  L  E  T  ■  ■  ■  ■  ■ |
-	15 | A  M  P  U  T  A  S  ■  S  A  P  I  O  N  S |
+	 1 | B  U  T  T  O  N  S  ■  D  E  P  A  R  T  S |
+	 2 | E  ■  I  O  N  ■  L  ■  E  ■  D  O  E  ■  O |
+	 3 | F  A  R  E  ■  J  O  ■  S  H  ■  L  I  M  B |
+	 4 | A  G  E  ■  M  A  G  I  C  A  L  ■  S  U  E |
+	 5 | L  E  ■  S  E  R  A  ■  A  M  I  E  ■  M  R |
+	 6 | L  ■  R  T  E  ■  N  O  N  ■  M  A  W  ■  L |
+	 7 | S  H  A  Y  K  H  S  ■  T  H  E  R  E  B  Y |
+	 8 | ■  ■  ■  M  ■  O  ■  ■  ■  A  ■  L  ■  ■  ■ |
+	 9 | M  E  L  I  S  S  A  ■  I  N  C  I  T  E  S |
+	10 | I  ■  T  E  N  ■  B  E  N  ■  L  E  A  ■  O |
+	11 | S  C  ■  S  A  W  S  ■  S  E  A  R  ■  D  I |
+	12 | L  O  G  ■  G  H  O  S  T  L  Y  ■  W  A  R |
+	13 | A  D  E  N  ■  O  R  ■  A  M  ■  D  I  N  E |
+	14 | Y  ■  L  O  G  ■  B  ■  L  ■  C  O  N  ■  E |
+	15 | S  E  T  T  E  E  S  ■  L  E  S  S  O  N  S |
 	   +=============================================+
-	65 black cells (28%)
+	49 black cells (21%)
 
 For more information on available parameters:
 
