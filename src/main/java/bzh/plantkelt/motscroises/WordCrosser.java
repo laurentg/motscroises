@@ -101,7 +101,7 @@ public class WordCrosser {
 				/ grid.cellCount() > params.maxBlackPerc;
 		if (tooBlack && stats.nFreeBlacks > 0 && !params.fixedBlacks) {
 			removeBlack();
-			Logger.warn(grid.toString());
+			Logger.warn(grid.toString(Logger.level >= Logger.INFO, false));
 			return false;
 		}
 
@@ -127,14 +127,14 @@ public class WordCrosser {
 
 		if (remove) {
 			removeWord();
-			Logger.warn(grid.toString());
+			Logger.warn(grid.toString(Logger.level >= Logger.INFO, false));
 			return false;
 		}
 
 		ScoredWord tentative = selectTentative(tentatives);
 		Logger.warn("Writing word: %s", tentative);
 		grid.writeWord(tentative.word);
-		Logger.warn(grid.toString());
+		Logger.warn(grid.toString(Logger.level >= Logger.INFO, false));
 
 		return false;
 	}
