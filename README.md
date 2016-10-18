@@ -138,35 +138,45 @@ Another grid, made in fixed mode, for the fun:
 	   +=======================================+
 	33 black cells (19%)
 
-Of course you can make a large grid with short words (20x20 grid with word of 8 letters or less):
+Of course you can make a large grid with short words (30x30 grid with word of 10 letters or less):
 
-	$ motscroises -c 20 -r 20 -s 8 --maxFill 22 --dictionnary fr.txt
+	$ motscroises -c 30 -r 30 -s 10 --maxFill 22 --dictionnary fr.txt
 
-	Grid found in 174 iterations (seed is 1476823582847)
-	     A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q  R  S  T 
-	   +============================================================+
-	 1 | ■  R  A  G  E  ■  T  U  B  ■  B  ■  I  ■  O  ■  P  A  R  E |
-	 2 | T  A  I  E  ■  R  E  L  I  G  I  O  N  ■  P  I  A  N  O  S |
-	 3 | ■  S  ■  L  E  ■  ■  C  E  ■  A  ■  G  R  E  E  R  E  N  T |
-	 4 | ■  ■  C  A  S  T  R  E  R  ■  I  D  E  E  S  ■  E  ■  F  ■ |
-	 5 | E  M  ■  ■  S  E  ■  R  E  S  S  E  R  T  ■  D  U  A  L  E |
-	 6 | R  I  S  S  O  L  E  E  ■  ■  E  ■  A  R  T  E  S  I  E  N |
-	 7 | G  R  E  E  R  ■  N  ■  C  ■  R  O  S  A  I  ■  E  N  ■  R |
-	 8 | ■  E  ■  ■  E  ■  T  R  A  M  ■  P  ■  C  E  ■  S  E  R  A |
-	 9 | O  R  ■  P  R  ■  O  ■  D  E  L  E  T  E  R  E  ■  S  I  C |
-	10 | ■  A  ■  R  A  L  L  I  E  R  A  ■  R  E  C  U  ■  S  A  I |
-	11 | T  I  S  E  ■  ■  E  N  T  ■  S  U  E  ■  A  ■  ■  E  ■  N |
-	12 | ■  ■  A  T  T  ■  R  A  S  E  ■  ■  M  A  N  I  A  S  S  E |
-	13 | D  O  B  E  R  M  A  N  ■  ■  ■  R  ■  P  T  ■  L  ■  K  ■ |
-	14 | ■  N  O  U  I  E  ■  I  S  O  C  E  L  E  ■  S  E  U  I  L |
-	15 | ■  ■  R  S  E  ■  A  M  E  ■  ■  P  E  U  ■  ■  R  ■  A  I |
-	16 | S  I  D  E  R  A  L  E  ■  C  R  E  E  R  O  N  T  ■  I  N |
-	17 | A  N  A  ■  E  C  O  E  U  R  A  T  ■  E  M  I  A  S  S  E |
-	18 | L  U  T  E  Z  ■  S  ■  R  A  T  I  E  R  E  S  ■  O  ■  A |
-	19 | S  I  ■  M  ■  R  E  C  E  N  S  E  S  ■  T  E  R  R  I  L |
-	20 | E  T  H  E  R  E  S  ■  E  S  ■  Z  ■  P  E  R  E  S  ■  E |
-	   +============================================================+
-	92 black cells (23%)
+	Grid found in 5573 iterations (seed is 1476823947160)
+	     A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z  [  \  ]  ^
+	   +==========================================================================================+
+	 1 | B  U  V  O  T  A  ■  M  ■  G  ■  A  ■  S  A  P  A  J  O  U  S  ■  M  I  L  S  ■  O  H  M |
+	 2 | ■  N  ■  R  I  M  A  I  L  L  O  N  S  ■  X  ■  S  A  U  N  A  T  E  S  ■  A  N  S  E  E |
+	 3 | T  A  C  ■  S  I  ■  R  O  U  P  E  T  T  E  S  ■  U  T  I  L  E  ■  B  ■  L  ■  E  U  S |
+	 4 | R  U  C  H  E  R  ■  E  U  T  ■  R  U  ■  S  E  I  N  ■  ■  I  ■  L  A  I  E  S  ■  ■  ■ |
+	 5 | I  ■  ■  ■  ■  A  M  E  R  E  ■  I  C  ■  ■  C  ■  I  R  A  S  ■  O  S  ■  R  E  L  I  S |
+	 6 | A  C  C  A  B  L  E  ■  A  N  S  E  ■  P  O  U  R  R  A  I  ■  C  F  ■  C  A  L  I  N  A |
+	 7 | ■  A  H  ■  A  ■  V  E  T  ■  A  S  T  U  ■  L  A  ■  M  E  G  O  T  E  E  S  ■  E  U  S |
+	 8 | E  P  O  I  N  T  E  R  ■  D  L  ■  ■  L  I  A  S  S  E  S  ■  N  ■  M  S  ■  A  R  T  S |
+	 9 | M  O  U  ■  ■  E  N  G  A  M  A  M  E  S  ■  R  H  E  ■  ■  E  C  H  U  S  ■  R  A  I  A |
+	10 | U  T  ■  ■  E  S  T  ■  R  ■  S  A  M  E  D  I  ■  T  A  C  H  E  ■  S  E  R  A  I  L  S |
+	11 | L  E  U  R  S  ■  E  U  R  O  ■  ■  ■  E  ■  S  E  S  ■  A  ■  D  E  ■  S  E  S  ■  I  ■ |
+	12 | E  S  T  ■  S  E  ■  N  I  ■  E  T  E  ■  M  E  N  ■  A  P  L  A  T  I  ■  S  ■  O  T  E |
+	13 | N  ■  ■  D  E  P  L  I  E  N  T  ■  ■  R  E  ■  T  I  S  S  E  ■  U  N  I  S  ■  P  E  U |
+	14 | T  A  I  E  ■  E  ■  ■  R  E  E  N  G  A  G  E  R  ■  ■  ■  S  K  I  F  ■  E  T  E  ■  S |
+	15 | ■  C  O  N  T  E  N  U  E  S  ■  E  ■  P  I  L  E  ■  C  L  E  ■  ■  E  ■  M  O  N  O  S |
+	16 | R  E  N  I  A  S  ■  ■  R  ■  H  O  U  P  ■  I  ■  C  R  I  ■  S  U  R  H  A  U  S  S  E |
+	17 | ■  R  ■  ■  L  ■  O  ■  ■  ■  A  ■  T  R  E  M  U  L  E  R  A  I  ■  T  ■  ■  R  ■  E  S |
+	18 | G  E  R  E  E  ■  S  T  A  D  I  A  ■  E  U  E  ■  ■  V  E  R  ■  S  I  C  ■  O  S  ■  ■ |
+	19 | ■  R  A  S  E  E  S  ■  ■  E  ■  V  ■  T  E  R  R  E  E  ■  E  T  A  L  O  N  N  A  I  T |
+	20 | T  A  I  T  ■  M  U  S  A  R  D  A  M  E  S  ■  U  S  E  Z  ■  H  I  E  R  ■  ■  L  ■  ■ |
+	21 | R  ■  N  ■  L  I  ■  ■  M  A  ■  L  I  ■  ■  R  A  S  ■  E  M  E  T  ■  N  U  M  I  D  E |
+	22 | A  M  A  R  I  N  A  M  E  S  ■  I  M  P  I  E  ■  A  U  N  E  S  ■  P  E  N  A  T  E  S |
+	23 | M  A  ■  ■  E  C  U  ■  N  A  S  S  E  ■  F  I  L  I  N  ■  T  E  N  U  E  ■  I  ■  C  C |
+	24 | A  L  T  O  ■  A  ■  ■  D  ■  C  E  ■  C  ■  N  ■  M  E  U  R  S  ■  N  ■  S  T  R  I  A |
+	25 | ■  M  U  ■  S  I  G  N  E  ■  A  R  M  A  ■  V  ■  A  ■  N  A  ■  L  A  S  E  R  ■  ■  L |
+	26 | F  E  R  R  E  E  ■  ■  R  E  L  A  I  S  S  E  E  S  ■  E  S  ■  I  ■  O  ■  I  O  D  E |
+	27 | I  N  C  A  R  N  E  R  A  ■  P  I  S  T  O  N  S  ■  A  S  ■  V  E  R  N  I  S  S  E  S |
+	28 | A  I  ■  S  I  T  U  A  S  S  E  ■  ■  R  U  T  ■  O  H  ■  R  O  S  I  ■  D  E  ■  G  ■ |
+	29 | S  E  M  E  E  ■  E  S  ■  A  R  R  I  E  R  E  ■  S  A  L  U  E  ■  E  ■  E  R  R  A  T |
+	30 | ■  Z  ■  R  E  S  S  A  S  S  A  I  ■  R  I  S  B  A  N  ■  T  U  A  S  ■  S  A  U  T  A |
+	   +==========================================================================================+
+	207 black cells (23%)
 
 For more information on available parameters:
 
