@@ -93,7 +93,10 @@ public class WordCrosserMain {
 					for (int icol = 0; icol < params.cols
 							&& icol < line.length(); icol++) {
 						char c = line.charAt(icol);
-						if (c == ' ' || c == '.' || c == '_') {
+						if (c == '.' || c == ' ') {
+							// empty cell
+						} else if (c == '_') {
+							grid.cells[icol][irow].noBlack = true;
 						} else if (c >= 'A' && c <= 'Z') {
 							grid.cells[icol][irow].letter = c;
 							grid.cells[icol][irow].fixed = true;

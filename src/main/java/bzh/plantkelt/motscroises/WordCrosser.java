@@ -71,6 +71,13 @@ public class WordCrosser {
 				return false;
 			}
 			if (loop()) {
+				GridStats stats = grid.getStats();
+				Logger.error("");
+				Logger.error("Grid found in %d iterations (seed is %d)", niters,
+						seed);
+				Logger.error(grid.toString(false, true));
+				Logger.error("%d black cells (%d%%)", stats.nBlacks,
+						stats.nBlacks * 100 / grid.cellCount());
 				return true;
 			}
 		}
@@ -80,11 +87,6 @@ public class WordCrosser {
 
 		GridStats stats = grid.getStats();
 		if (stats.nEmpty == 0) {
-			Logger.error("");
-			Logger.error("Grid found in %d iterations.", niters);
-			Logger.error(grid.toString(false, true));
-			Logger.error("%d black cells (%d%%)", stats.nBlacks,
-					stats.nBlacks * 100 / grid.cellCount());
 			return true;
 		}
 
@@ -376,19 +378,27 @@ public class WordCrosser {
 			// Snap to border
 			blackScore *= 2;
 		} else {
-			int n = grid.blackNeighbors(blackBefore);
-			blackScore /= (n * n * 0.2 + 1);
-			if (!blackBefore.isBlack())
-				blackScore /= 2;
+			if (blackBefore.noBlack) {
+				blackScore = 0;
+			} else {
+				int n = grid.blackNeighbors(blackBefore);
+				blackScore /= (n * n * 0.2 + 1);
+				if (!blackBefore.isBlack())
+					blackScore /= 2;
+			}
 		}
 		if (blackAfter == null) {
 			// Snap to border
 			blackScore *= 2;
 		} else {
-			int n = grid.blackNeighbors(blackAfter);
-			blackScore /= (n * n * 0.2 + 1);
-			if (!blackAfter.isBlack())
-				blackScore /= 2;
+			if (blackAfter.noBlack) {
+				blackScore = 0;
+			} else {
+				int n = grid.blackNeighbors(blackAfter);
+				blackScore /= (n * n * 0.2 + 1);
+				if (!blackAfter.isBlack())
+					blackScore /= 2;
+			}
 		}
 		double ret = blackScore * patternScore;
 		return ret;

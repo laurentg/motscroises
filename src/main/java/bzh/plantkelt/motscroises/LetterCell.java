@@ -26,6 +26,7 @@ public class LetterCell implements Cloneable {
 	WordOnGrid h = null;
 	WordOnGrid v = null;
 	boolean fixed = false;
+	boolean noBlack = false;
 
 	public LetterCell(int icol, int irow) {
 		this.icol = icol;
@@ -38,6 +39,7 @@ public class LetterCell implements Cloneable {
 		retval.h = h;
 		retval.v = v;
 		retval.fixed = fixed;
+		retval.noBlack = noBlack;
 		return retval;
 	}
 

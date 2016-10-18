@@ -55,8 +55,8 @@ public class CmdLineParams {
 			"--seed" }, description = "Random seed. Default to 0 (random seed).")
 	public long seed = 0L;
 
-	@Parameter(names = { 
-		"--init" }, description = "Grid initialization file (underscore/dot/space, letter or #/@)")
+	@Parameter(names = {
+			"--init" }, description = "Grid initialization file. Should contain <rows> lines of <cols> characters. Dot: empty cell - Underscore: empty cell, forbid black - Letter: fixed letter - #/@: black cell. Any line starting with ; is ignored.")
 	public String init = null;
 
 	@Parameter(names = {

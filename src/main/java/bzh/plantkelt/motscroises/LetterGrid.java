@@ -350,6 +350,8 @@ public class LetterGrid implements Cloneable {
 					score2 += right.h.constraint;
 				}
 				double score = score1 * score2;
+				if (cell.noBlack)
+					score *= 1000;
 				if (score > max) {
 					max = score;
 					retval = cell;
