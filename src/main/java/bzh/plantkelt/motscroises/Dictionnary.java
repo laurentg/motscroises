@@ -206,7 +206,8 @@ public class Dictionnary {
 				letterIndexes.add(i);
 			}
 		}
-		int maxLetters = MAX_LETTER_COUNT_IN_PATTERN[patternLen];
+		int maxLetters = patternLen < MAX_LETTER_COUNT_IN_PATTERN.length
+				? MAX_LETTER_COUNT_IN_PATTERN[patternLen] : 1;
 		if (letterIndexes.size() <= maxLetters) {
 			// The pattern is OK, use it right away
 			return patterns.get(pattern);
