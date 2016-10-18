@@ -133,6 +133,23 @@ Another grid, made in fixed mode with a regular black pattern, for the fun:
 	   +=======================================+
 	33 black cells (19%)
 
+An even more regular pattern of 9x9:
+	
+	Grid found in 48 iterations (seed is 1476825993618)
+        A  B  C  D  E  F  G  H  I 
+	   +===========================+
+	 1 | A  R  C  H  I  T  E  C  T |
+	 2 | S  ■  O  ■  M  ■  X  ■  H |
+	 3 | P  A  R  A  M  E  T  E  R |
+	 4 | I  ■  R  ■  O  ■  R  ■  E |
+	 5 | R  A  I  L  R  O  A  D  S |
+	 6 | A  ■  D  ■  T  ■  D  ■  H |
+	 7 | T  H  O  R  A  Z  I  N  E |
+	 8 | E  ■  R  ■  L  ■  T  ■  R |
+	 9 | D  I  S  A  S  T  E  R  S |
+	   +===========================+
+	16 black cells (19%)
+	
 Of course you can make a large grid with short words (30x30 grid with words of 10 letters or less).
 Be careful, the following grid took a few minutes to compute:
 
