@@ -10,7 +10,7 @@ in particular, there is no warranty.
 
 Find/create a word dictionnary (text file, UTF8, one word per line), or use `/usr/share/dict/words`, and run:
 
-	$ motscroise --cols 14 -rows 14 --size 14 --dictionnary fr.txt --seed 42 --maxFill 15
+	$ motscroise --cols 14 -rows 14 --size 14 --dictionnary fr.txt --seed 42 --maxFill 20
 
 	Grid found in 265 iterations.
 	     A  B  C  D  E  F  G  H  I  J  K  L 
