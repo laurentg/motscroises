@@ -64,10 +64,10 @@ public class Dictionnary {
 		} catch (IOException e) {
 			throw new IllegalArgumentException(e);
 		}
-		Logger.warn("Loaded " + words.size() + " words.");
+		Logger.error("Loaded " + words.size() + " words.");
 
 		// Index words
-		Logger.warn("Indexing words...");
+		Logger.error("Indexing words...");
 		patterns = ArrayListMultimap.create(100000, 10);
 		alphabetFrequencies = new AlphabetFreq();
 		lengthFrequencies = new long[maxWordLen + 1];
