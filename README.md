@@ -138,6 +138,35 @@ Another grid, made in fixed mode, for the fun:
 	   +=======================================+
 	33 black cells (19%)
 
+Of course you can make a large grid with short words (20x20 grid with word of 8 letters or less):
+
+	$ motscroises -c 20 -r 20 -s 8 --maxFill 22 --dictionnary fr.txt
+
+	Grid found in 174 iterations (seed is 1476823582847)
+	     A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q  R  S  T 
+	   +============================================================+
+	 1 | ■  R  A  G  E  ■  T  U  B  ■  B  ■  I  ■  O  ■  P  A  R  E |
+	 2 | T  A  I  E  ■  R  E  L  I  G  I  O  N  ■  P  I  A  N  O  S |
+	 3 | ■  S  ■  L  E  ■  ■  C  E  ■  A  ■  G  R  E  E  R  E  N  T |
+	 4 | ■  ■  C  A  S  T  R  E  R  ■  I  D  E  E  S  ■  E  ■  F  ■ |
+	 5 | E  M  ■  ■  S  E  ■  R  E  S  S  E  R  T  ■  D  U  A  L  E |
+	 6 | R  I  S  S  O  L  E  E  ■  ■  E  ■  A  R  T  E  S  I  E  N |
+	 7 | G  R  E  E  R  ■  N  ■  C  ■  R  O  S  A  I  ■  E  N  ■  R |
+	 8 | ■  E  ■  ■  E  ■  T  R  A  M  ■  P  ■  C  E  ■  S  E  R  A |
+	 9 | O  R  ■  P  R  ■  O  ■  D  E  L  E  T  E  R  E  ■  S  I  C |
+	10 | ■  A  ■  R  A  L  L  I  E  R  A  ■  R  E  C  U  ■  S  A  I |
+	11 | T  I  S  E  ■  ■  E  N  T  ■  S  U  E  ■  A  ■  ■  E  ■  N |
+	12 | ■  ■  A  T  T  ■  R  A  S  E  ■  ■  M  A  N  I  A  S  S  E |
+	13 | D  O  B  E  R  M  A  N  ■  ■  ■  R  ■  P  T  ■  L  ■  K  ■ |
+	14 | ■  N  O  U  I  E  ■  I  S  O  C  E  L  E  ■  S  E  U  I  L |
+	15 | ■  ■  R  S  E  ■  A  M  E  ■  ■  P  E  U  ■  ■  R  ■  A  I |
+	16 | S  I  D  E  R  A  L  E  ■  C  R  E  E  R  O  N  T  ■  I  N |
+	17 | A  N  A  ■  E  C  O  E  U  R  A  T  ■  E  M  I  A  S  S  E |
+	18 | L  U  T  E  Z  ■  S  ■  R  A  T  I  E  R  E  S  ■  O  ■  A |
+	19 | S  I  ■  M  ■  R  E  C  E  N  S  E  S  ■  T  E  R  R  I  L |
+	20 | E  T  H  E  R  E  S  ■  E  S  ■  Z  ■  P  E  R  E  S  ■  E |
+	   +============================================================+
+	92 black cells (23%)
 
 For more information on available parameters:
 
