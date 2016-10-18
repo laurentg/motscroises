@@ -293,6 +293,7 @@ public class WordCrosser {
 				letterScores[i] = Double.NaN;
 				letterWordCount[i] = -2;
 				Logger.debug("Skipping single-letter cell: %s", cell);
+				w += 1.;
 				i++;
 				continue;
 			}
