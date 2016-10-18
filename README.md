@@ -52,7 +52,7 @@ Or create an `init.txt` file containing for example:
 	.#...#.#.#...#.
 	.......#.......
 
-And run in fixed-black / initialized mode:
+And run in fixed-black / initialized mode (with a verbose mode to see the process going):
 
 	$ motscroises --verbose 2 -c 15 -r 15 -s 7 --seed 43 --maxFill 30 --fixed --init init.txt --dictionnary /usr/share/dict/words
 	
@@ -78,6 +78,45 @@ To get:
 	15 | S  E  T  T  E  E  S  ■  L  E  S  S  O  N  S |
 	   +=============================================+
 	49 black cells (21%)
+
+You can forbid some cells to be black, just use an underscore in the initialization file:
+
+	$ cat init2.txt
+	_____________
+	_#_#_#_#_#_#_
+	____._._.____
+	_#_......._#_
+	__.........__
+	_#_......._#_
+	__.........__
+	_#_......._#_
+	__.........__
+	_#_......._#_
+	____._._.____
+	_#_#_#_#_#_#_
+	_____________
+
+	$ motscroises -c 13 -r 13 -s 13 --maxFill 25 --init init2.txt --dictionnary fr.txt
+
+	Grid found in 1178 iterations (seed is 1476815916472)
+	     A  B  C  D  E  F  G  H  I  J  K  L  M 
+	   +=======================================+
+	 1 | C  O  N  T  R  E  T  I  R  E  R  A  I |
+	 2 | A  ■  O  ■  E  ■  E  ■  E  ■  E  ■  R |
+	 3 | T  R  I  S  M  E  ■  L  I  M  I  E  R |
+	 4 | H  ■  R  I  E  N  ■  A  N  O  N  ■  E |
+	 5 | E  X  ■  ■  R  ■  D  ■  S  I  ■  A  S |
+	 6 | T  ■  R  ■  C  H  U  T  E  ■  G  ■  I |
+	 7 | E  C  U  R  I  E  S  ■  R  O  U  E  S |
+	 8 | R  ■  T  H  E  ■  ■  B  E  L  E  ■  T |
+	 9 | I  N  ■  O  R  ■  D  O  R  E  R  A  I |
+	10 | S  ■  C  ■  I  N  ■  R  I  ■  I  ■  B |
+	11 | M  A  R  L  O  U  ■  D  O  R  S  A  L |
+	12 | E  ■  U  ■  N  ■  N  ■  N  ■  O  ■  E |
+	13 | S  A  T  I  S  F  A  I  S  A  N  T  S |
+	   +=======================================+
+	38 black cells (22%)
+
 
 For more information on available parameters:
 
