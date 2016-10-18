@@ -51,8 +51,7 @@ public class WordCrosser {
 	public boolean solve(long seed) {
 		if (seed == 0)
 			seed = System.currentTimeMillis();
-		else
-			rand = new Random(seed);
+		rand = new Random(seed);
 		Logger.error("Solving, seed is " + seed);
 
 		while (true) {
