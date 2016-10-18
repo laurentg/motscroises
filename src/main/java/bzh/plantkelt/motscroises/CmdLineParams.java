@@ -52,7 +52,7 @@ public class CmdLineParams {
 	public String dictionnary = "fr.txt";
 
 	@Parameter(names = {
-			"--seed" }, description = "Random seed. Default to 0 (random seed).")
+			"--seed" }, description = "Random seed. Default to 0 (use a random seed)")
 	public long seed = 0L;
 
 	@Parameter(names = {
@@ -64,7 +64,15 @@ public class CmdLineParams {
 	public boolean fixedBlacks = false;
 
 	@Parameter(names = {
-			"--maxFill" }, description = "Cap on this percentage of black fill.")
+			"--borderFactor" }, description = "Factor to prevent black on borders.")
+	public int borderFactor = 10;
+
+	@Parameter(names = {
+			"--twinsFactor" }, description = "Factor to prevent black twins.")
+	public int twinsFactor = 5;
+
+	@Parameter(names = {
+			"--maxFill" }, description = "Cap on this percentage of black fill")
 	public int maxBlackPerc = 20;
 
 	@Parameter(names = { "--maxIterations" }, description = "Max iterations")

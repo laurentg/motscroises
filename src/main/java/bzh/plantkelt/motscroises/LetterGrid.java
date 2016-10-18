@@ -330,8 +330,9 @@ public class LetterGrid implements Cloneable {
 					continue;
 				if (cell.fixed)
 					continue;
-				int blackNeighbors = blackNeighbors(cell);
-				double score1 = blackNeighbors * blackNeighbors;
+				int[] neighbors = countNeighbors(cell);
+				int totalNeighbors = neighbors[0] + neighbors[1];
+				double score1 = totalNeighbors * totalNeighbors;
 				double score2 = 0;
 				LetterCell up = offsetFrom(cell.icol, cell.irow, false, -1);
 				if (up != null && up.v != null) {
@@ -502,26 +503,35 @@ public class LetterGrid implements Cloneable {
 		return stats;
 	}
 
-	public int blackNeighbors(LetterCell cell) {
-		int n = 0;
+	/**
+	 * @return n[0]: border count, n[1]: neighboring black count (max 8), n[2]:
+	 *         touching black count (max 4)
+	 */
+	public int[] countNeighbors(LetterCell cell) {
+		int[] nn = new int[] { 0, 0, 0 };
 		for (int dcol = -1; dcol <= 1; dcol++) {
 			int icol2 = cell.icol + dcol;
 			if (icol2 < 0 || icol2 >= nCols) {
-				n += 3; // 3 borders
+				nn[0] += 3; // 3 borders
 				continue;
 			}
 			for (int drow = -1; drow <= 1; drow++) {
+				if (dcol == 0 && drow == 0)
+					continue;
 				int irow2 = cell.irow + drow;
 				if (irow2 < 0 || irow2 >= nRows) {
-					n++; // 1 border
+					nn[0]++; // 1 border
 					continue;
 				}
 				LetterCell cell2 = cells[icol2][irow2];
-				if (cell2.isBlack())
-					n++; // 1 black
+				if (cell2.isBlack()) {
+					nn[1]++; // 1 black
+					if (dcol == 0 || drow == 0)
+						nn[2]++;
+				}
 			}
 		}
-		return n;
+		return nn;
 	}
 
 	@Override

@@ -38,8 +38,8 @@ public class WordCrosser {
 	private Random rand;
 	private Queue<WordOnGrid> lastRemoved = EvictingQueue.create(20);
 
-	private static final double LEN_SCORE[] = { 1, 2, 4, 8, 16, 32, 48, 64, 80,
-			88, 92, 96, 100 };
+	private static final double LEN_SCORE[] = { 1, 0.1, 2, 8, 16, 32, 48, 64,
+			80, 88, 92, 96, 100 };
 
 	public WordCrosser(Dictionnary dict, LetterGrid grid,
 			CmdLineParams params) {
@@ -233,6 +233,8 @@ public class WordCrosser {
 		do {
 			for (WordOnGrid subPattern : patterns) {
 				double patternScore = scorePattern(subPattern);
+				if (patternScore == 0)
+					continue;
 				List<String> words;
 				if (subPattern.word().length() == 1) {
 					words = Arrays.asList(subPattern.word());
@@ -293,7 +295,6 @@ public class WordCrosser {
 				letterScores[i] = Double.NaN;
 				letterWordCount[i] = -2;
 				Logger.debug("Skipping single-letter cell: %s", cell);
-				w += 1.;
 				i++;
 				continue;
 			}
@@ -368,40 +369,49 @@ public class WordCrosser {
 				nLetters++;
 			}
 		}
+		// Favor patterns hard to find
 		double patternScore = Math.exp(nLetters);
 		// Prevent black letters cluster
 		double blackScore = 1.0;
+		// Prevent black on border
+		double borderScore = 1.0;
 		LetterCell blackBefore = grid.offsetFrom(pattern.icol, pattern.irow,
 				pattern.h, -1);
 		LetterCell blackAfter = grid.offsetFrom(pattern.icol, pattern.irow,
 				pattern.h, pattern.length());
 		if (blackBefore == null) {
 			// Snap to border
-			blackScore *= 2;
+			borderScore *= 2;
 		} else {
 			if (blackBefore.noBlack) {
 				blackScore = 0;
+			} else if (blackBefore.isBlack()) {
+				blackScore *= 10;
 			} else {
-				int n = grid.blackNeighbors(blackBefore);
-				blackScore /= (n * n * 0.2 + 1);
-				if (!blackBefore.isBlack())
-					blackScore /= 2;
+				int[] nn = grid.countNeighbors(blackBefore);
+				int nBorder = nn[0];
+				int nBlack = nn[1];
+				borderScore /= (nBorder * nBorder * params.borderFactor + 1);
+				blackScore /= (nBlack * nBlack * params.twinsFactor + 1);
 			}
 		}
 		if (blackAfter == null) {
 			// Snap to border
-			blackScore *= 2;
+			borderScore *= 2;
 		} else {
 			if (blackAfter.noBlack) {
 				blackScore = 0;
+			} else if (blackAfter.isBlack()) {
+				blackScore *= 10;
 			} else {
-				int n = grid.blackNeighbors(blackAfter);
-				blackScore /= (n * n * 0.2 + 1);
-				if (!blackAfter.isBlack())
-					blackScore /= 2;
+				int[] nn = grid.countNeighbors(blackAfter);
+				int nBorder = nn[0];
+				int nBlack = nn[1];
+				borderScore /= (nBorder * nBorder * params.borderFactor + 1);
+				blackScore /= (nBlack * nBlack * params.twinsFactor + 1);
 			}
 		}
-		double ret = blackScore * patternScore;
+		double ret = blackScore * borderScore * patternScore;
 		return ret;
 	}
 
