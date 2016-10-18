@@ -8,11 +8,9 @@ in particular, there is no warranty.
 
 ## Usage
 
-Find/create a word dictionnary (text file, UTF8, one word per line), or use `/usr/share/dict/words`:
+Find/create a word dictionnary (text file, UTF8, one word per line), or use `/usr/share/dict/words`, and run:
 
 	$ motscroise --cols 14 -rows 14 --size 14 --dictionnary fr.txt --seed 42 --maxFill 15
-
-Will result in:
 
 	Grid found in 265 iterations.
 	     A  B  C  D  E  F  G  H  I  J  K  L 
@@ -34,8 +32,9 @@ Will result in:
 	   +====================================+
 	27 black cells (16%)
 
-Or create an `init.txt` file containing for example:
+Or create an `init.txt` file, and run in fixed-black / initialized mode (with a verbose mode to see the process going):
 
+	$ cat init.txt
 	.......#.......
 	.#...#.#.#...#.
 	....#..#..#....
@@ -52,11 +51,7 @@ Or create an `init.txt` file containing for example:
 	.#...#.#.#...#.
 	.......#.......
 
-And run in fixed-black / initialized mode (with a verbose mode to see the process going):
-
 	$ motscroises --verbose 2 -c 15 -r 15 -s 7 --seed 43 --maxFill 30 --fixed --init init.txt --dictionnary /usr/share/dict/words
-	
-To get:
 
 	Grid found in 169 iterations.
 	     A  B  C  D  E  F  G  H  I  J  K  L  M  N  O
@@ -117,7 +112,7 @@ You can forbid some cells to be black, just use an underscore in the initializat
 	   +=======================================+
 	38 black cells (22%)
 
-Another grid, made in fixed mode, for the fun:
+Another grid, made in fixed mode with a regular black pattern, for the fun:
 
 	Grid found in 5184 iterations (seed is 1476816809553)
 	     A  B  C  D  E  F  G  H  I  J  K  L  M
@@ -138,7 +133,8 @@ Another grid, made in fixed mode, for the fun:
 	   +=======================================+
 	33 black cells (19%)
 
-Of course you can make a large grid with short words (30x30 grid with word of 10 letters or less):
+Of course you can make a large grid with short words (30x30 grid with words of 10 letters or less).
+Be careful, the following grid took a few minutes to compute:
 
 	$ motscroises -c 30 -r 30 -s 10 --maxFill 22 --dictionnary fr.txt
 
