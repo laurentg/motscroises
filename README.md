@@ -117,6 +117,27 @@ You can forbid some cells to be black, just use an underscore in the initializat
 	   +=======================================+
 	38 black cells (22%)
 
+Another grid, made in fixed mode, for the fun:
+
+	Grid found in 5184 iterations (seed is 1476816809553)
+	     A  B  C  D  E  F  G  H  I  J  K  L  M
+	   +=======================================+
+	 1 | D  E  C  A  R  B  O  N  A  T  A  N  T |
+	 2 | E  ■  E  ■  A  ■  U  ■  G  ■  V  ■  R |
+	 3 | P  A  R  T  I  E  ■  S  E  R  I  N  A |
+	 4 | R  ■  C  R  A  N  E  U  S  E  S  ■  N |
+	 5 | A  L  E  A  ■  T  U  E  ■  G  A  R  S |
+	 6 | V  ■  S  I  E  E  ■  E  M  I  T  ■  H |
+	 7 | E  U  ■  T  U  ■  ■  ■  U  S  ■  R  U |
+	 8 | R  ■  P  I  E  U  ■  F  A  T  S  ■  M |
+	 9 | A  F  R  O  ■  P  S  I  ■  R  A  T  A |
+	10 | I  ■  I  N  T  A  I  L  L  A  T  ■  I |
+	11 | E  U  S  S  E  S  ■  M  Y  I  A  S  E |
+	12 | N  ■  E  ■  T  ■  L  ■  R  ■  N  ■  N |
+	13 | T  U  R  L  U  P  I  N  E  R  E  N  T |
+	   +=======================================+
+	33 black cells (19%)
+
 
 For more information on available parameters:
 
