@@ -112,6 +112,8 @@ You can forbid some cells to be black, just use an underscore in the initializat
 	   +=======================================+
 	38 black cells (22%)
 
+## Other examples
+
 Another grid, made in fixed mode with a regular black pattern, for the fun:
 
 	Grid found in 5184 iterations (seed is 1476816809553)
@@ -195,6 +197,16 @@ For more information on available parameters:
 
 	$ motscroises --help
 
-Read the source code to learn how it works.
+## How it works
+
+Soon to be: a more detailed human-readable algorithm explanation.
+
+In the meantime, you can read the source code.
+
+## TODO
+
+* Ability to weight words (or dictionnary) to favor some words / types of words
+* Take into account the number of removed black cells to weight which word to remove
+* Score some words from sub-patterns even when the maximum word count to score is reached using only the full pattern
 
 Enjoy.
