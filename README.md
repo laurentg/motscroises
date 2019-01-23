@@ -1,7 +1,7 @@
 # Mots Croisés
 
-MotsCroisés is an open-source java program to generate automatically
-word-cross grids.
+MotsCroisés is an open-source java program to automatically generate
+crossword grids.
 
 This software is open-source and released under the GPLv3;
 in particular, there is no warranty.
@@ -202,11 +202,5 @@ For more information on available parameters:
 Soon to be: a more detailed human-readable algorithm explanation.
 
 In the meantime, you can read the source code.
-
-## TODO
-
-* Ability to weight words (or dictionnary) to favor some words / types of words
-* Take into account the number of removed black cells to weight which word to remove
-* Score some words from sub-patterns even when the maximum word count to score is reached using only the full pattern
 
 Enjoy.
